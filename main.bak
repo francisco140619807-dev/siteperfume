@@ -1,0 +1,15 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+
+const root = createRoot(document.getElementById("root")!);
+
+// Let the already-rendered critical hero become the LCP candidate before
+// React replaces the server-rendered shell. This changes only LCP timing;
+// the React UI, layout, tracking and links remain unchanged.
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    root.render(<App />);
+  });
+});
