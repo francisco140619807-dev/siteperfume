@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+}
+:root { --accent-gold:#e62020; --accent-gold-hover:#c81e1e; --bg-dark:#09090c; --bg-card:rgba(22,23,29,.7); }
+html { scroll-behavior:smooth; }
+body { font-family:"Poppins",sans-serif; text-rendering:optimizeSpeed; background-color:var(--bg-dark); color:#fff; overflow-x:hidden; }
+h1,h2,h3,.font-heading { font-family:"Montserrat",sans-serif; }
+.spotlight-bg { background:radial-gradient(circle at 70% 30%,rgba(230,32,32,.15) 0%,rgba(37,211,102,.05) 35%,transparent 70%); }
+.spotlight-bg-2 { background:radial-gradient(circle at 30% 60%,rgba(230,32,32,.12) 0%,rgba(36,161,222,.05) 35%,transparent 70%); }
+@keyframes marquee { 0%{transform:translateX(0%)} 100%{transform:translateX(-50%)} }
+.animate-marquee { will-change:transform; display:flex; width:max-content; animation:marquee 32s linear infinite; }
+.animate-marquee:hover { animation-play-state:paused; }
+@keyframes pulse-glow-green { 0%,100%{box-shadow:0 0 15px rgba(37,211,102,.4),0 0 30px rgba(37,211,102,.2)} 50%{box-shadow:0 0 25px rgba(37,211,102,.7),0 0 45px rgba(37,211,102,.35)} }
+.btn-whatsapp-glow { animation:pulse-glow-green 2.5s infinite ease-in-out; }
+.glass-card { contain:paint; background:rgba(22,23,29,.75); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.08); }
+.glass-card:hover { border-color:rgba(230,32,32,.4); transform:translateY(-2px); transition:all .3s ease; }
+::-webkit-scrollbar{width:10px} ::-webkit-scrollbar-track{background:#0b0b0e} ::-webkit-scrollbar-thumb{background:#23232a;border-radius:5px;border:2px solid #0b0b0e} ::-webkit-scrollbar-thumb:hover{background:#e62020}
+@media (min-width:768px){.header-offset-desktop{padding-top:45px}}
